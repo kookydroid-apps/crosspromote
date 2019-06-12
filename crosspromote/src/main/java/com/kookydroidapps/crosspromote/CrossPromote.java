@@ -7,7 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kookydroidapps.api.AppsClient;
-import com.kookydroidapps.modelclasses.Apps;
+import com.kookydroidapps.modelclasses.App;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,23 +26,23 @@ public class CrossPromote extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras!= null)
         {
-            url = extras.getString("URL");
+            url = extras.getString("url");
         }
 
         AppsClient appsClient = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://crosspromote.firebaseio.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(AppsClient.class);
 
-        Call<Apps> call = appsClient.getApps(url);
-        call.enqueue(new Callback<Apps>() {
+        Call<List<App>> call = appsClient.getApps(url);
+        call.enqueue(new Callback<List<App>>() {
             @Override
-            public void onResponse(Call<Apps> call, Response<Apps> response) {
-                Log.d("Apps", response.body().getApps().toString());
+            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
+                Log.d("Apps", response.body().toString());
             }
 
             @Override
-            public void onFailure(Call<Apps> call, Throwable t) {
+            public void onFailure(Call<List<App>> call, Throwable t) {
                 Log.e("Crosspromote","Apps", t);
             }
         });
