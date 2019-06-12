@@ -1,6 +1,8 @@
 
 package com.kookydroidapps.modelclasses;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 public class App {
@@ -83,4 +85,9 @@ public class App {
         this.visibile = visibile;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return getName() + ", " + getDownloadUrl() + ", " + getIconUrl();
+    }
 }

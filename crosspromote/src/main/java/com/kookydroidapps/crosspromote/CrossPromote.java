@@ -5,7 +5,10 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.kookydroidapps.adapters.AppsAdapter;
 import com.kookydroidapps.api.AppsClient;
 import com.kookydroidapps.modelclasses.App;
 
@@ -19,9 +22,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CrossPromote extends AppCompatActivity {
     String url;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mRecyclerView = findViewById(R.id.apps_recycler_view);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
         Bundle extras = getIntent().getExtras();
         if (extras!= null)
@@ -39,6 +56,9 @@ public class CrossPromote extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<App>> call, Response<List<App>> response) {
                 Log.d("Apps", response.body().toString());
+                // specify an adapter (see also next example)
+                mAdapter = new AppsAdapter(response.body());
+                mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
