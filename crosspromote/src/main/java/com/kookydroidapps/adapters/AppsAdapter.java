@@ -76,7 +76,9 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(apps.get(position).getDownloadUrl())));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(apps.get(position).getDownloadUrl()));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
 
