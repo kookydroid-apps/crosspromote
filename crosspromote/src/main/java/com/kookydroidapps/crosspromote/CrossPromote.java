@@ -21,7 +21,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CrossPromote extends AppCompatActivity {
-    String url;
+    String url,title;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -44,7 +44,10 @@ public class CrossPromote extends AppCompatActivity {
         if (extras!= null)
         {
             url = extras.getString("url");
+            title = extras.getString("title", "More Apps");
         }
+
+        setTitle(title);
 
         AppsClient appsClient = new Retrofit.Builder()
                 .baseUrl("https://crosspromote.firebaseio.com")
@@ -57,7 +60,7 @@ public class CrossPromote extends AppCompatActivity {
             public void onResponse(Call<List<App>> call, Response<List<App>> response) {
                 Log.d("Apps", response.body().toString());
                 // specify an adapter (see also next example)
-                mAdapter = new AppsAdapter(response.body());
+                mAdapter = new AppsAdapter(response.body(), getApplicationContext());
                 mRecyclerView.setAdapter(mAdapter);
             }
 
