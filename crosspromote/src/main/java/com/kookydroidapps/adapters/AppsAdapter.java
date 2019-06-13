@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.recyclerview.widget.RecyclerView;
 import com.kookydroidapps.crosspromote.R;
 import com.kookydroidapps.modelclasses.App;
@@ -78,7 +80,12 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(apps.get(position).getDownloadUrl()));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                try {
+                    context.startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_SHORT);
+                    e.printStackTrace();
+                }
             }
         });
 

@@ -58,7 +58,7 @@ public class CrossPromote extends AppCompatActivity {
         call.enqueue(new Callback<List<App>>() {
             @Override
             public void onResponse(Call<List<App>> call, Response<List<App>> response) {
-                Log.d("Apps", response.body().toString());
+//                Log.d("Apps", response.body().toString());
                 // specify an adapter (see also next example)
                 mAdapter = new AppsAdapter(response.body(), getApplicationContext());
                 mRecyclerView.setAdapter(mAdapter);
