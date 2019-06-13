@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-public class App {
+public class App implements Comparable {
 
     @SerializedName("description")
     @Expose
@@ -89,5 +89,12 @@ public class App {
     @Override
     public String toString() {
         return getName() + ", " + getDownloadUrl() + ", " + getIconUrl();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int compareorder=((App)o).getOrder();
+        /* For Ascending order*/
+        return this.getOrder()-compareorder;
     }
 }
