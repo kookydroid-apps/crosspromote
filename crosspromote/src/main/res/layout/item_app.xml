@@ -27,21 +27,20 @@
             android:layout_marginBottom="8dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:src="@drawable/default_icon" />
 
         <TextView
             android:id="@+id/appNameTV"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
+            android:layout_height="27dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="TextView"
             android:layout_toEndOf="@+id/appIcon"
-            android:layout_alignParentEnd="true"
+            android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/appDescriptionTV"
@@ -54,7 +53,6 @@
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/appIcon"
             android:layout_below="@+id/appNameTV"
-            android:layout_above="@+id/appChip"
             android:text="TextView" />
 
         <TextView
@@ -62,9 +60,9 @@
             android:layout_width="296dp"
             android:layout_height="24dp"
             android:layout_marginStart="8dp"
-            android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/appIcon"
             android:gravity="center"
+            android:layout_alignParentBottom="true"
             android:text="Download"
             android:textColor="#009688" />
 
