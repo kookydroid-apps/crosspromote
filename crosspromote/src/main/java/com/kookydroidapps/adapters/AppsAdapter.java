@@ -83,7 +83,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
                 try {
                     context.startActivity(intent);
                 } catch (Exception e) {
-                    Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_SHORT);
+                    Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
