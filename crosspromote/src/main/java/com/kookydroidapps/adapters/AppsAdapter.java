@@ -15,6 +15,7 @@ import com.kookydroidapps.crosspromote.R;
 import com.kookydroidapps.modelclasses.App;
 import com.squareup.picasso.Picasso;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
@@ -41,6 +42,12 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
     // Provide a suitable constructor (depends on the kind of dataset)
     public AppsAdapter(List<App> appsList, Context context1) {
         apps = appsList;
+//        apps.sort(new Comparator<App>() {
+//            @Override
+//            public int compare(App app, App t1) {
+//                return 0;
+//            }
+//        });
         context = context1;
     }
 
