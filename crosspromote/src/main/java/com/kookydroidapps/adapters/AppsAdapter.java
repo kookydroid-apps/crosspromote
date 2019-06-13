@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.chip.Chip;
 import com.kookydroidapps.crosspromote.R;
 import com.kookydroidapps.modelclasses.App;
 import com.squareup.picasso.Picasso;
@@ -28,7 +26,7 @@ public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
         public TextView nameTextView;
         public TextView descriptionTextView;
         public ImageView iconImageView;
-        public Chip appChip;
+        public TextView appChip;
         public ViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.appNameTV);
