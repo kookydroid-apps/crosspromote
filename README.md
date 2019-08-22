@@ -2,8 +2,11 @@
 Cross promote your android apps by using this library. We use it in most of our applications to cross promote our other android apps. 
 
 **Preview:**
+<p  align="center">
+  <img align="left" src="1.png" width="300"  hspace="20" />
+  <img align="left" src="2.png" width="300"  hspace="20" /> 
+</p>
 
-![](device-2019-08-22-100159.png) ![](device-2019-08-22-100251.png)
 
 ### Requirements:
 
