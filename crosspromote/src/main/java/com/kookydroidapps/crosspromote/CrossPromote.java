@@ -2,6 +2,7 @@ package com.kookydroidapps.crosspromote;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,8 +61,15 @@ public class CrossPromote extends AppCompatActivity {
             public void onResponse(Call<List<App>> call, Response<List<App>> response) {
 //                Log.d("Apps", response.body().toString());
                 // specify an adapter (see also next example)
-                mAdapter = new AppsAdapter(response.body(), getApplicationContext());
-                mRecyclerView.setAdapter(mAdapter);
+                if (!response.body().isEmpty() && response.body().size()>0) {
+                    mAdapter = new AppsAdapter(response.body(), getApplicationContext());
+                    mRecyclerView.setAdapter(mAdapter);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext()
+                    , "Apps list not found!", Toast.LENGTH_SHORT);
+                }
             }
 
             @Override
