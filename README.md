@@ -37,7 +37,7 @@ To  use this library you need a list of app from a JSON web service. The schema 
 1. Add the `crosspromote` library dependency:
 
    ```
-   implementation 'com.github.kookydroid-apps:crosspromote:${latest_version}'
+   implementation 'com.github.kookydroid-apps:crosspromote:${latest_version}' \\v0.1.4.5-alpha
    ```
 
    *Latest version from the release tab.*
