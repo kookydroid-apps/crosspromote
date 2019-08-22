@@ -2,7 +2,7 @@
 Cross promote your android apps by using this library. We use it in most of our applications to cross promote our other android apps. 
 
 **Preview:**
-![](1.png =400px) ![](2.png =400px)
+<img src="1.png" width="400"> <img src="2.png" width="400">
 
 ### Requirements:
 
