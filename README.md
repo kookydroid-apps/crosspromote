@@ -4,11 +4,11 @@ Cross promote your android apps by using this library. We use it in most of our 
 **Preview:**
 
 <p align="center">
-  <img align="left" src="1.png" width="400"/>
-  <img align="left" src="2.png" width="400"/> 
-</p>
-<br/>   
+  <img align="left" src="1.png" width="425"/>
+  <img align="left" src="2.png" width="425"/> 
+</p><br/>   
 <br/><br/>
+
 ### Requirements:
 
 To  use this library you need a list of app from a JSON web service. The schema should be as follows:
