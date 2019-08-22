@@ -6,7 +6,7 @@ Cross promote your android apps by using this library. We use it in most of our 
 <p align="center">
   <img align="left" src="1.png" width="425"/>
   <img align="left" src="2.png" width="425"/> 
-</p><br/>   
+</p>
 <br/><br/>
 
 ### Requirements:
