@@ -4,8 +4,8 @@ Cross promote your android apps by using this library. We use it in most of our 
 **Preview:**
 
 <p align="center">
-  <img align="left" src="1.png" width="300"/>
-  <img align="left" src="2.png" width="300"/> 
+  <img align="left" src="1.png" width="400"/>
+  <img align="left" src="2.png" width="400"/> 
 </p><br>
 
 ### Requirements:
